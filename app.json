@@ -1,6 +1,7 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/camera/camera"
   ],
   "plugins": {
     "tfjsPlugin": {
@@ -8,5 +9,6 @@
       "provider": "wx6afed118d9e81df9"
     }
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "workers": "workers"
 }

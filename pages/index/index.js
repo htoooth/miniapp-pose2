@@ -97,7 +97,7 @@ Page({
     },
     onReady: function () {
         return __awaiter(this, void 0, void 0, function () {
-            var context, count, listener;
+            var context, count, listener, worker;
             var _this = this;
             return __generator(this, function (_a) {
                 console.log('create canvas context for #image...');
@@ -116,6 +116,13 @@ Page({
                     }
                 });
                 listener.start();
+                worker = wx.createWorker('workers/posenet/index.js');
+                worker.postMessage({
+                    msg: 'hi worker'
+                });
+                worker.onMessage(function (res) {
+                    console.log('master receive =>', res);
+                });
                 return [2 /*return*/];
             });
         });
